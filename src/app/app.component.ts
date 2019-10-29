@@ -16,7 +16,7 @@ export class AppComponent {
 
   constructor() {
     this.sourceList = [];
-    this.displayList = [];
+    // this.displayList = [];
     let satUrl = 'https://handlers.education.launchcode.org/static/satellites.json';
 
     window.fetch(satUrl).then(function(response) {
@@ -39,18 +39,16 @@ export class AppComponent {
     }.bind(this))
   }
 
-  search(searchTerm: string): void {
-    //this.displayList = this.sourceList
+  search(): void {
     let matchingSatellites: Satellite[] = [];
-    searchTerm = searchTerm.toLowerCase();
+    let searchTerm: string = ''
+    searchTerm = document.getElementById('searchTerm').value.toLowerCase();
     for(let i=0; i < this.sourceList.length; i++) {
        let name = this.sourceList[i].name.toLowerCase();
-       if (name.indexOf(searchTerm) >= 0) {
+       if (name.indexOf(searchTerm) >= 0) { 
           matchingSatellites.push(this.sourceList[i]);
        }
     }
-    // assign this.displayList to be the the array of matching satellites
-    // this will cause Angular to re-make the table, but now only containing matches
     this.displayList = matchingSatellites;
  }
 
