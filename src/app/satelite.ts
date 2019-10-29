@@ -5,22 +5,25 @@ export class Satellite {
     type: string;
     operational: boolean;
     launchDate: string;
-   
 
+    color: string;
+    rowColor: string;
+   
     constructor(name: string, type: string, launchDate: string, orbitType: string, operational: boolean){
         this.name = name;
         this.type = type;
         this.launchDate = launchDate;
         this.orbitType = orbitType;
         this.operational = operational;
+        
+        if (this.shouldShowWarning()){
+            this.color = 'rgba(199, 0, 36, 0.5)'
+            this.rowColor = 'rgba(199, 0, 36, 0.3)'
+        }
+    }
 
-        // this.sourceList = [
-        //     new Satelite("SiriusXM", "Communication", "2009-03-21", "LOW", true),
-        //     new Satelite("Cat Scanner", "Imaging", "2012-01-05", "LOW", true),
-        //     new Satelite("Weber Grill", "Space Debris", "1996-03-25", "HIGH", false),
-        //     new Satelite("GPS 938", "Positioning", "2001-11-01", "HIGH", true),
-        //     new Satelite("ISS", "Space Station", "1998-11-20", "LOW", true),
-        //   ]
-
+    shouldShowWarning(){
+        if (this.type === 'Space Debris') { return true } 
+        else { return false }
     }
 }
