@@ -10,21 +10,32 @@
 
 table {
     color: #111;
-    border-radius: 5px;
+    border-radius: 2px;
     overflow: hidden;
     margin: 12px 0;
-    min-width: 300px;
+    /* min-width: 300px;
+    max-width: 500px; */
+    width: 800px;
     background: #dad8d8;
 }
 
 .header-row {
-    background: #34495E;
+    background: #34495E;    
     color: #fff;
 }
+
+table tr:nth-child(even){
+    background-color: rgba(0,0,100,0.15);
+}
+
 
 th, td {
     text-align: left;
     margin: 5px 10px;
     padding: 6px;
 }
+
+/* th, td.centered {
+    text-align: center;
+} */
 

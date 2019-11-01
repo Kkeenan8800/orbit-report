@@ -1,5 +1,5 @@
-     <table>
-        <tr class="header-row">
+     <table id='orbit-list'>
+        <tr class="header-row" style.background-color='#34495E' style.color='fff'>
             <th class = "sortable" (click)="sort('name')">Name</th>
             <th class = 'sortable' (click)="sort('type')">Type</th> 
             <th>Operational</th>
@@ -9,9 +9,9 @@
         <tr [style.background-color]="sat.rowColor" *ngFor='let sat of satellites'>
             <th>{{sat.name}}</th>
             <th [style.background-color]="sat.color">{{sat.type}}</th>
-            <th>{{sat.operational}}</th>
-            <th>{{sat.orbitType}}</th>
-            <th>{{sat.launchDate}}</th>
+            <th class='centered'>{{sat.operational}}</th>
+            <th class='centered'>{{sat.orbitType}}</th>
+            <th class='centered'>{{sat.launchDate}}</th>
         </tr>
     </table>
 

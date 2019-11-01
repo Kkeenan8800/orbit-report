@@ -2,11 +2,16 @@
 <!-- <app-orbit-list [satellites]="sourceList"></app-orbit-list>  -->
 
 <h3>Orbit Report</h3>
-<div class="search-form">
-    <input value='' id='searchTerm' (keyup)="search()">
-    <button (click)="search()">search</button>
+<div class='search-form'>
+    <input #searchTerm (keyup)='search(searchTerm.value)'/>
+    <button (click)='search(searchTerm.value)'>Search</button>
 </div>
+<!-- <div class="search-form">
+    <input name = 'searchTerm' #searchTerm placeholder='' id='searchTerm' (keyup)="search()">
+    <button (click)="search()">search</button>
+</div> -->
 <app-orbit-list [satellites]="displayList"></app-orbit-list> 
+
 
 
 
